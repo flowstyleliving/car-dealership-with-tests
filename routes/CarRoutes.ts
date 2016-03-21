@@ -1,6 +1,10 @@
-import carController from '../api/carController';
+//import it with all //helps with ts
+import * as controller from '../api/carController';
 import * as express from 'express';
 const router = express.Router();
 // Base route => /api/v1/cars
 
-export default router;
+// GET: api/v1/cars/
+router.get('/', controller.getAll);
+
+export = router;

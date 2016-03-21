@@ -25,15 +25,15 @@ export default class Car implements app.i.ICar {
     this._id = uuid.v4();
 
     if(typeof obj_image === "object") {
-      if(obj_image.image) throw new Error('The image property is required.')
-      if(obj_image.make) throw new Error('The make property is required.')
-      if(obj_image.model) throw new Error('The model property is required.')
-      if(obj_image.descript) throw new Error('The descript property is required.')
-      if(obj_image.year) throw new Error('The year property is required.')
-      if(obj_image.color) throw new Error('The color property is required.')
-      if(obj_image.isNew) throw new Error('The isNew property is required.')
-      if(obj_image.numDoors) throw new Error('The numDoors property is required.')
-      if(obj_image.worth) throw new Error('The worth property is required.')
+      if(!obj_image.image) throw new Error('The image property is required.')
+      if(!obj_image.make) throw new Error('The make property is required.')
+      if(!obj_image.model) throw new Error('The model property is required.')
+      if(!obj_image.descript) throw new Error('The descript property is required.')
+      if(!obj_image.year) throw new Error('The year property is required.')
+      if(!obj_image.color) throw new Error('The color property is required.')
+      if(!obj_image.isNew) throw new Error('The isNew property is required.')
+      if(!obj_image.numDoors) throw new Error('The numDoors property is required.')
+      if(!obj_image.worth) throw new Error('The worth property is required.')
 
       this.image = obj_image.image;
       this.make = obj_image.make;
@@ -52,7 +52,7 @@ export default class Car implements app.i.ICar {
       if(!descript) throw new Error('The descript property is required.')
       if(!year) throw new Error('The year property is required.')
       if(!color) throw new Error('The color property is required.')
-      if(!isNew) throw new Error('The isNew property is required.')
+      if(!isNew && isNew !== false) throw new Error('The isNew property is required.')
       if(!numDoors) throw new Error('The numDoors property is required.')
       if(!worth) throw new Error('The worth property is required.')
 
