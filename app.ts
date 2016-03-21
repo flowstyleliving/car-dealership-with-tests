@@ -1,3 +1,5 @@
+//import express from 'express';
+//import * as express from 'express'; ****
 import express = require('express');
 const app = express();
 
@@ -25,6 +27,10 @@ app.get('/about', (req, res, next) => {
 app.get('/contact', (req, res, next) => {
   res.render('contact.jade');
 })
+
+//be mindful of where we are putting things b/c js reads top-down
+//we are making the /v1/cars
+app.use('/api/v1/cars', require('./routes/carRoutes'))
 
 
 // '/*' needs to be at the bottom, b/c js reads from top-down
