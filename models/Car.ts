@@ -21,7 +21,7 @@ export default class Car implements app.i.ICar {
   public numDoors: number;
   public worth: string;
 
-  constructor(obj_image: (string| app.i.ICar), make: string, model: string, descript: string, year: number, color: string, isNew: boolean, numDoors: number, worth: string) {
+  constructor(obj_image: (string| app.i.ICar), make ?: string, model ?: string, descript ?: string, year ?: number, color ?: string, isNew ?: boolean, numDoors ?: number, worth ?: string) {
     this._id = uuid.v4();
 
     if(typeof obj_image === "object") {

@@ -10,6 +10,7 @@ app.engine('html', require('ejs').renderFile);
 // index.html => index
 app.set('view engine', 'html');
 
+
 app.use('/', express.static('./ngApp'));
 // replaces what's inside bower_components with /scripts
 app.use('/scripts', express.static('./bower_components'));
@@ -28,7 +29,7 @@ app.get('/contact', (req, res, next) => {
   res.render('contact.jade');
 })
 
-//be mindful of where we are putting things b/c js reads top-down
+//be mindful of where we are putting things b/c js reads top-down + above the app.get /* call
 //we are making the /v1/cars
 app.use('/api/v1/cars', require('./routes/carRoutes'))
 
@@ -40,6 +41,15 @@ app.get('/*', (req, res, next) => {
     res.render('index');
 })
 
-app.listen(3000, () => {
+app.use((req, res, next) => {
+  let err = {status: 404, message: "Page not found."};
+  next(err);
+});
+
+app.use((err: any, req: express.Request, res: express.Response, next: Function) => {
+  res.status(err.status || 500).send({ message: err.message, err: err});
+});
+
+export = app.listen(3000, () => {
   console.log('Server is running on localhost:3000');
 });

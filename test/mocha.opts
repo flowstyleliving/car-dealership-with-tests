@@ -1,0 +1,6 @@
+--require should
+-R nyan
+--ui bdd
+
+--colors
+--recursive
