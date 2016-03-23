@@ -49,8 +49,8 @@ describe('Car Routes', () => {
           worth: 'test worth'
         };
 
-        request(server)
-        .post('api/v1/cars')
+      request(server)
+        .post('/api/v1/cars')
         .send(car)
         .expect(200)
         .expect((res) => {
