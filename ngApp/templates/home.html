@@ -1,1 +1,43 @@
-<h1>Home Page</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div>
+      <div class="jumbotron" style="text-align: center; background-color: #dce3ce">
+        <h2 style="font-family:arialbold;">
+					BIENVENDIOS MY NIGG@!
+				</h2>
+        <img style="width: 800px; height: auto;" src="http://www.faw-car.com/public/fawcar/en/official/images/banner02.jpg" alt="wtf" />
+        <br><br>
+        <p>
+          This is the best place to purchase or lease a car on the entire face of the interwebz!!!~
+          <br> Here's a bunny to prove it!
+          <br>
+          <br> (Y)
+          <br> (o.O)
+          <br> (>&nbsp;&nbsp;&nbsp;<)<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="well" ng-repeat="c in vm.cars">
+    <div class="well-lg" style="background-color: #dce3ce">
+      <div class="row" style="background-color: #dce3ce">
+        <div class="well" style="background-color: #46522e; color: white; font-family: arial; font-weight: bold;">
+<h2>{{c.make}} {{c.model}}</h2>
+        </div>
+        <div class="col col-sm-1" style="border: .5pt solid black;
+        height: 300px;
+        width: 400px;
+        overflow: hidden;">
+          <img style="height: auto;
+          width: 400px;" ng-src='{{c.image}}' />
+        </div>
+        <button type="button" style="float: right;" class="btn btn-info" ng-click="vm.openModal(c)">Expand</button>
+      </div>
+    </div>
+  </div>
+</div>

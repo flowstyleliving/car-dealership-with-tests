@@ -1,5 +1,5 @@
 namespace app {
-  angular.module('app', ['ui.router', 'ngResource'])
+  angular.module('app', ['ui.router', 'ngResource', 'ui.bootstrap',])
   .config((
     $stateProvider: ng.ui.IStateProvider,
     $urlRouterProvider: ng.ui.IUrlRouterProvider,
@@ -9,7 +9,10 @@ namespace app {
     $stateProvider.state('Home', {
       url: '/',
       templateUrl: '/templates/home.html',
-    }).state('About Me', {
+      controller: 'HomeController',
+      controllerAs: 'vm'
+    })
+    .state('About Me', {
       url: '/about',
       templateUrl: '/templates/about.html'
     })

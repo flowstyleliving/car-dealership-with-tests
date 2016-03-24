@@ -1,0 +1,11 @@
+.picsbruh {
+  border: .5pt solid black;
+  height: 300px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.picsbruh img {
+  height: auto;
+  width: 400px;
+}

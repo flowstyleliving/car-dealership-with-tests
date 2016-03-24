@@ -1,0 +1,22 @@
+<div class="container-fluid" style="background-color: lightgrey;">
+  <div class="modal-header">
+    <h3>{{modal.cars.make}}  {{modal.cars.model}}</h3>
+  </div>
+  <div class="modal-body">
+    <div>
+      <img ng-src='{{modal.cars.img}}'/>
+    </div>
+    <h6>{{modal.cars.worth}}</h6>
+    <p>Year: {{modal.cars.year}}</p>
+    <p>{modal.cars.color}}</p>
+    <p>{{modal.cars.descript}}</p>
+  </div>
+  <div class="modal-footer">
+    <!-- edit -->
+    <button class="btn btn-info" type="button" ng-click="modal.edit">Edit</button>
+    <!-- remove -->
+    <button class="btn btn-danger" type="button" ng-click="modal.remove">Delete</button>
+    <!-- cancel out modal -->
+    <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Close</button>
+  </div>
+</div>

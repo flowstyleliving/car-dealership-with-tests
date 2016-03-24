@@ -25,7 +25,7 @@ export function create(req: express.Request, res: express.Response, next: Functi
 
 export function update(req: express.Request, res: express.Response, next: Function) {
   let car = db.cars.filter((c) => c._id === req.params.id)[0];
-  if(!car) return next({ status: 404, message: 'Could not find car to update.' });
+  if(!car) return next({ status: 404, message: 'Could not find the car you requested.' });
 
   if(req.body.image) car.image = req.body.image;
   if(req.body.make) car.make = req.body.make;

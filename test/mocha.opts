@@ -1,5 +1,5 @@
 --require should
--R spec
+-R nyan
 --ui bdd
 
 --colors
